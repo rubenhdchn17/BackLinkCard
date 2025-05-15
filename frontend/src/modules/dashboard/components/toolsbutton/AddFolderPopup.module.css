@@ -1,0 +1,118 @@
+.popupOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.popup {
+  background: white;
+  border-radius: 20px;
+  padding: 24px;
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.input {
+  padding: 12px;
+  border-radius: 12px;
+  border: 2px solid black;
+  font-size: 16px;
+  outline: none;
+}
+
+.dropdown {
+  background: #d3d3d3;
+  border-radius: 16px;
+  padding: 12px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.dropdownHeader {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.linksList {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: auto;
+  max-height: 150px;
+  padding-right: 4px;
+  transition: max-height 0.3s ease-in-out;
+}
+
+
+.linkItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  padding: 8px 12px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.linkItem:hover {
+  background: #f1f1f1;
+}
+
+.selected {
+  background: #e6f7e6;
+}
+
+.linkIcon {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cancel {
+  color: red;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.add {
+  height: 50px;
+  width: 125px;
+  border-radius: 15px;
+  background: #d3d3d3;
+  font-weight: bold;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+  border: none;
+  cursor: pointer;
+}
+
+.linksListWrapper {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  will-change: max-height, opacity;
+}
+
+.linksListWrapper.show {
+  max-height: 200px;
+  opacity: 1;
+}

@@ -1,0 +1,92 @@
+.card {
+    width: 180px;
+    min-height: 120px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 12px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.cardHeader {
+    background-color: rgb(255, 255, 255);
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    cursor: grab;
+}
+
+.cardContent {
+  background-color: rgb(245, 245, 245);
+  padding: 8px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.draggableItemWrapper {
+  width: 100%;
+}
+
+.bookmark {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 0;
+    color: black;
+    text-decoration: none;
+}
+
+.bookmark:hover {
+    text-decoration: underline;
+}
+
+.favicon {
+    width: 16px;
+    height: 16px;
+}
+
+.folder {
+    margin-top: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: bold;
+    padding: 4px 0;
+    color: black;
+}
+
+.popup {
+    position: fixed;
+    background: white;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    min-width: 180px;
+    font-size: 12px;
+}
+
+.popupItem {
+    padding: 4px 0;
+    cursor: pointer;
+}
+
+.popupItem a {
+    text-decoration: none;
+    color: black;
+}
+
+.popupItem a:hover {
+    text-decoration: underline;
+}
+
+.hidden {
+    display: none;
+}

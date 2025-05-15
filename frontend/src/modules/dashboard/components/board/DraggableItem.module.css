@@ -1,0 +1,13 @@
+.draggableItemWrapper {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  margin-bottom: 8px;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.hidden {
+  opacity: 0;
+}
