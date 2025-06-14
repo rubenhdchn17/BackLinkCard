@@ -2,7 +2,7 @@
 .popupOverlay {
     position: fixed;
     inset: 0;
-    background-color: rgba(255, 0, 0, 0.2); /* 🔴 rojo transparente */
+background: rgba(0, 0, 0, 0.3);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,14 +10,13 @@
   }  
   
   .popup {
-    background-color: #fff;
-    border-radius: 12px;
-    padding: 20px;
-    width: 300px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 20px;
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
   }
   
   .input {
@@ -29,38 +28,44 @@
   }
   
   .dropdown {
-    background-color: #e0e0e0;
-    border-radius: 10px;
-    overflow: hidden;
+  background-color: #e0e0e0;
+  border-radius: 16px;
+  padding: 12px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
   }
   
   .dropdownHeader {
-    display: flex;
+  display: flex;
     justify-content: space-between;
     align-items: center;
     font-weight: bold;
-    padding: 10px 12px;
     cursor: pointer;
   }
   
   .linksList {
-    max-height: 160px;
-    transition: max-height 0.3s ease-in-out;
-    overflow-y: auto;
+    margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: auto;
+  max-height: 150px;
+  padding-right: 4px;
+  transition: max-height 0.3s ease-in-out;
   }
   
   .linkItem {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 8px 12px;
-    background-color: white;
-    border-bottom: 1px solid #ddd;
-    font-size: 14px;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  padding: 8px 12px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
   }
   
   .linkItem:last-child {
-    border-bottom: none;
+    background-color: #f2f2f2;
   }
   
   .linkItem:hover {
@@ -73,8 +78,8 @@
   
   .buttons {
     display: flex;
-    justify-content: flex-end;
-    gap: 12px;
+    justify-content: space-between;
+    align-items: center;
   }
   
   .cancel {
@@ -94,4 +99,17 @@
   border: none;
   cursor: pointer;
   }
+
+  .linksListWrapper {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  will-change: max-height, opacity;
+}
+
+.linksListWrapper.show {
+  max-height: 200px;
+  opacity: 1;
+}
   

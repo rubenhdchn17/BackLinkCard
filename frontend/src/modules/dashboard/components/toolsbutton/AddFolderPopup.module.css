@@ -2,19 +2,19 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+    position: fixed;
+    inset: 0;
   background: rgba(0, 0, 0, 0.3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* asegúrate que está por encima de todo */
 }
 
 .popup {
-  background: white;
+  background-color: #fff;
   border-radius: 20px;
-  padding: 24px;
+  padding: 20px;
   width: 320px;
   display: flex;
   flex-direction: column;
@@ -22,7 +22,7 @@
 }
 
 .input {
-  padding: 12px;
+  padding: 10px;
   border-radius: 12px;
   border: 2px solid black;
   font-size: 16px;
@@ -30,7 +30,7 @@
 }
 
 .dropdown {
-  background: #d3d3d3;
+  background-color: #e0e0e0;
   border-radius: 16px;
   padding: 12px;
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
@@ -38,10 +38,10 @@
 
 .dropdownHeader {
   display: flex;
-  justify-content: space-between;
-  cursor: pointer;
-  font-weight: bold;
-  font-size: 16px;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    cursor: pointer;
 }
 
 .linksList {
@@ -68,8 +68,9 @@
 }
 
 .linkItem:hover {
-  background: #f1f1f1;
-}
+    background-color: #f2f2f2;
+  }
+
 
 .selected {
   background: #e6f7e6;
@@ -108,7 +109,7 @@
   overflow: hidden;
   max-height: 0;
   opacity: 0;
-  transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
   will-change: max-height, opacity;
 }
 

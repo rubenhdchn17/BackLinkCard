@@ -65,11 +65,12 @@ const Card = ({ id, title, items = [], updateItemsInCard, activeId }) => {
     <div
       ref={setDraggableRef}
       className={styles.card}
-      onContextMenu={handleContextMenu}
+      
     >
       {/* Encabezado de la tarjeta con drag listeners */}
       <div
         className={styles.cardHeader}
+        onContextMenu={handleContextMenu}
         {...listeners}
         {...attributes}
       >
@@ -112,14 +113,14 @@ const Card = ({ id, title, items = [], updateItemsInCard, activeId }) => {
       {/* Menú contextual de la tarjeta */}
       {contextMenu && (
         <ContextMenu
-          x={contextMenu.x}
-          y={contextMenu.y}
+          position={{ x: contextMenu.x, y: contextMenu.y }}
           options={[
             { label: "Renombrar", onClick: () => console.log("Renombrar", id) },
             { label: "Eliminar", onClick: () => console.log("Eliminar", id) },
           ]}
           onClose={() => setContextMenu(null)}
         />
+
       )}
     </div>
   );

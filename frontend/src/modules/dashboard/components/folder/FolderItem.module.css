@@ -100,3 +100,8 @@
 .folder-column {
   position: relative;
 }
+
+.highlightOnCtrlDrop {
+  border: 2px dashed #007bff;
+  background-color: #e8f0ff;
+}

@@ -12,18 +12,28 @@ import styles from "./DraggableBoard.module.css";
  *
  * Props:
  * - id: string | number - Identificador único del bloque.
- * - items: Array - Lista de ítems contenidos en el bloque. Cada ítem debe tener un id y un type ("link" o "folder").
+ * - items: Array<{ id: string | number, type: 'link' | 'folder', ... }> - Lista de ítems con tipo y datos.
  * - activeId: string | number - ID del ítem que actualmente está siendo arrastrado.
  */
 const FreeItemsBlock = ({ id, items, activeId }) => {
+  const renderItem = (item) => {
+    switch (item.type) {
+      case "link":
+        return <LinkItem {...item} />;
+      case "folder":
+        return <FolderItem {...item} />;
+      default:
+        console.warn(`Tipo de ítem desconocido: ${item.type}`);
+        return null;
+    }
+  };
+
   return (
-    <div className={styles.freeItemsBlock}>
-      {/* Permite el ordenamiento de los ítems usando sus IDs */}
-      <SortableContext items={items.map((i) => i.id)}>
+    <div className={styles.freeItemsBlock} data-block-id={id}>
+      <SortableContext items={items.map((item) => item.id)}>
         {items.map((item) => (
           <DraggableItem key={item.id} id={item.id} activeId={activeId}>
-            {/* Renderiza el componente adecuado según el tipo de ítem */}
-            {item.type === "link" ? <LinkItem {...item} /> : <FolderItem {...item} />}
+            {renderItem(item)}
           </DraggableItem>
         ))}
       </SortableContext>
